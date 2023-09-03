@@ -1,13 +1,18 @@
 name: infra-run
 on:
   workflow_dispatch:
-  
+    inputs:
+      reqid:
+        description: 'request id'
+        required: false
+        type: string
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
+      - run: echo ${{ inputs.reqid }}
       - name: Run a one-line script
         run: echo Hello, world!
         
