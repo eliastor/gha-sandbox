@@ -6,7 +6,7 @@ on:
         description: 'request id'
         required: false
         type: string
-concurrency: "{{ github.head_ref ||  github.ref }}-{{ inputs.reqid }}"
+concurrency: "${{ github.head_ref ||  github.ref }}-${{ inputs.reqid }}"
 jobs:
   job1:
     runs-on: ubuntu-latest
