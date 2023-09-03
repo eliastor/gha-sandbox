@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: echo ${{ inputs.reqid }}
+      - run: echo "${{ github.head_ref ||  github.ref }}-${{ inputs.reqid }}"
       - name: Run a one-line script
         run: echo Hello, world!
         
