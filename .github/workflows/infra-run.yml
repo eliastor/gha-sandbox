@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: echo "${{ github.head_ref ||  github.ref }}-${{ inputs.reqid }}"
+      - run: echo "${{ github.workflow }}-${{ github.head_ref ||  github.ref }}-${{ github.event.inputs.reqid }}"
       - name: Run a one-line script
         run: echo Hello, world!
         
