@@ -11,6 +11,10 @@ jobs:
   aps-provision-infra:
     runs-on: ubuntu-latest
     steps:
+      - name: Install APS
+        run: "# install aps"
+      - name: "provision account"
+        run: "# aps provision testacc1"
     
   provision-test-infra:
     runs-on: ubuntu-latest
