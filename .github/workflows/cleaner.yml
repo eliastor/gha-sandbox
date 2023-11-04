@@ -16,3 +16,5 @@ jobs:
         run: |
           # Cleaning cloud resources
           echo "Cleaning cloud resources"
+
+# on fail send notification
