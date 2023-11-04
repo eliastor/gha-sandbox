@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Your Specific Action
-        if: ${{ github.event.workflow_run.conclusion != 'success' }}
         run: |
-          # Replace this with the actual command to run your specific action
-          echo "Running your specific action after all jobs"
+          # Cleaning cloud resources
+          echo "Cleaning cloud resources"
