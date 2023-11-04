@@ -1,0 +1,22 @@
+name: Wipe cloud reasource out
+
+on:
+  workflow_run:
+    # workflows: [] all workflows 
+    types:
+      - completed
+
+concurrency: "${{github.workflow}}"
+
+jobs:
+  on-workflow-completion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if the previous workflow succeeded
+        run: echo "Previous workflow status: ${{ github.event.workflow_run.conclusion }}"
+      
+      - name: Run Your Specific Action
+        if: ${{ github.event.workflow_run.conclusion != 'success' }}
+        run: |
+          # Replace this with the actual command to run your specific action
+          echo "Running your specific action after all jobs"

@@ -1,0 +1,17 @@
+name: infra-watch
+on:
+  workflow_call:
+    inputs:
+      arg:
+        required: true
+        type: string
+
+concurrency: "${{github.workflow}}-${{github.event.inputs.arg}}"
+
+
+jobs:
+  watching:
+    runs-on: ubuntu-latest
+    steps:
+      - name: watching-step1
+        run: date
