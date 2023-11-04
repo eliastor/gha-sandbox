@@ -2,7 +2,7 @@ name: Wipe cloud reasource out
 
 on:
   workflow_run:
-    # workflows: [] all workflows 
+    workflows: ["*"]
     types:
       - completed
 
