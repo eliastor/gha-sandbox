@@ -23,3 +23,5 @@ jobs:
           echo test, and deploy your project.
       - name: Run APS
         uses: ./.github/workflows/aps-start.yml
+      - name: do the job
+        run: echo "do the job!"
