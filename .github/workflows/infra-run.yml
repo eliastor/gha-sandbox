@@ -22,4 +22,4 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Run APS
-        action: .github/workflows/aps-start.yml
+        uses: .github/workflows/aps-start.yml
