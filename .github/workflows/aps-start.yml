@@ -1,0 +1,26 @@
+name: Run APS
+
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      envPAT:
+        required: true
+
+concurrency: "${{github.workflow}}"
+
+jobs:
+  trigger_aps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Your Specific Action
+        run: |
+          echo "Triggering APS"
+  background:
+    runs-on: ubuntu-latest
+    steps:
+      - name: background task
+        run: (while sleep 1; do echo "executing"; done) &
