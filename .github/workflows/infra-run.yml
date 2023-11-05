@@ -33,8 +33,10 @@ jobs:
     needs: ["aps-start"]
     steps:
       - name: APS background task
-        uses: ./github/workflows/aps-watch.yml
-        with:
-          arg: dfdfd
+        # uses: ./github/workflows/aps-watch.yml
+        # with:
+        #   arg: dfdfd
+        run: (while sleep 1; do echo "executing"; done) &
+      
       - name: do the job
         run: echo "do the job!"
