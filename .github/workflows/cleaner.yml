@@ -1,4 +1,4 @@
-name: Wipe cloud reasource out
+name: Cloud resources cleaner
 
 on:
   workflow_run:
