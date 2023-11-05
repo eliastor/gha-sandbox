@@ -29,5 +29,6 @@ jobs:
         uses: ./.github/workflows/aps-start.yml
 
   deploy:
+    steps:
       - name: do the job
         run: echo "do the job!"
