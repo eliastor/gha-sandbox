@@ -10,11 +10,8 @@ concurrency: "${{github.workflow}}"
 
 jobs:
   on-workflow-completion:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Your Specific Action
-        run: |
-          # Cleaning cloud resources
-          echo "Cleaning cloud resources"
+    uses: ./.github/workflows/aps-clean.yml
+    with:
+      config-path: "blah"
 
 # on fail send notification

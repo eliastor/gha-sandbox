@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: APS background task
+      run: (while sleep 1; do echo "executing"; done) &
+
       - run: echo "${{ github.workflow }}-${{ github.head_ref ||  github.ref }}-${{ github.event.inputs.reqid }}"
       - name: Run a one-line script
         run: echo Hello, world!

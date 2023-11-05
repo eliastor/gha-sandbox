@@ -19,9 +19,3 @@ jobs:
       - name: Run Your Specific Action
         run: |
           echo "Triggering APS"
-
-  background:
-    runs-on: ubuntu-latest
-    steps:
-      - name: background task
-        run: (while sleep 1; do echo "executing"; done) &
