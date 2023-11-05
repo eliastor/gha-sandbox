@@ -25,6 +25,8 @@ jobs:
   
   aps-start:
     uses: ./.github/workflows/aps-start.yml
+    with:
+      config-path: "blah"
 
   deploy:
     runs-on: ubuntu-latest
