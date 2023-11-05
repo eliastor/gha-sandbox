@@ -40,3 +40,8 @@ jobs:
       
       - name: do the job
         run: echo "do the job!"
+  clean:
+    needs: ["deploy"]
+    uses: ./.github/workflows/aps-clean.yml
+    with:
+      config-path: aaa
