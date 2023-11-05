@@ -1,0 +1,21 @@
+name: Wipe cloud reasource out
+
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+
+# concurrency: "${{github.workflow}}"
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Your Specific Action
+        run: |
+          # Cleaning cloud resources
+          echo "Cleaning cloud resources"
+
+# on fail send notification
