@@ -22,9 +22,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           pwd && tree .github
-
+  aps-start:
+    runs-on: ubuntu-latest
+    steps:
       - name: Start APS
         uses: ./.github/workflows/aps-start.yml
 
+  deploy:
       - name: do the job
         run: echo "do the job!"
