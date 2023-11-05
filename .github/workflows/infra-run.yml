@@ -21,10 +21,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          pwd && ls -hla
+          pwd && tree .
 
       - name: Start APS
         uses: ./.github/workflows/aps-start.yml
-        
+
       - name: do the job
         run: echo "do the job!"
