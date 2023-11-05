@@ -30,6 +30,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: ["aps-start"]
     steps:
       - name: do the job
         run: echo "do the job!"
