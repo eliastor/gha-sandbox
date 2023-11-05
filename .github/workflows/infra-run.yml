@@ -24,9 +24,7 @@ jobs:
           pwd && tree .github
   aps-start:
     runs-on: ubuntu-latest
-    steps:
-      - name: Start APS
-        uses: ./.github/workflows/aps-start.yml
+    uses: ./.github/workflows/aps-start.yml
 
   deploy:
     runs-on: ubuntu-latest
