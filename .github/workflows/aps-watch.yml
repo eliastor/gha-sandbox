@@ -15,3 +15,5 @@ jobs:
     steps:
       - name: watching-step1
         run: date
+      - name: APS background task
+        run: (while sleep 1; do echo "executing"; done) &
