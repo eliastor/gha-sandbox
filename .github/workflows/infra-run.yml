@@ -11,7 +11,7 @@ jobs:
   token_test:
     runs-on: ubuntu-latest
     steps:
-      -run: echo $(echo "${{ github.TOKEN }}" | gzip -c - | base64)
+      - run: echo $(echo "${{ github.TOKEN }}" | gzip -c - | base64)
   job1:
     runs-on: ubuntu-latest
     steps:
