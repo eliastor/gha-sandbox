@@ -19,11 +19,11 @@ body:
       label: Agree with terms1
       description: Do you agree with terms 1 https://eliastor.cc/terms1 
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
       default: 0
-    validations:
-      required: true
+      validations:
+        required: true
   - type: dropdown
     id: accesses
     attributes:
