@@ -1,7 +1,7 @@
 name: Form sample
 description: This form is used as an example
 title: "Form submission"
-labels: ["form"]
+labels: ["form1"]
 assignees:
   - eliastor
 body:
