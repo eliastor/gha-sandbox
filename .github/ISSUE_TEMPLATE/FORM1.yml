@@ -7,8 +7,8 @@ assignees:
 body:
   - type: input
     id: contact
-    validations:
-      required: false
+    # validations:
+    #   required: false
     attributes:
       label: Contact Details
       description: How can we get in touch with you if we need more info?
@@ -23,10 +23,10 @@ body:
       options:
         - label: "I agree with with terms 1 https://eliastor.cc/terms1"
           required: true
-        - label: "I agree with with terms 2 https://eliastor.cc/terms2"
-          required: true
-        - label: "I read README.md [README.md](README.md)" 
-          required: true
+        #- label: "I agree with with terms 2 https://eliastor.cc/terms2"
+        #  required: true
+        #- label: "I read README.md [README.md](README.md)" 
+        #  required: true
   - type: dropdown
     id: accesses
     validations:
