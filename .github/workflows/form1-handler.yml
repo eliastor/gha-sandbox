@@ -5,9 +5,10 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{github.event.id}}
   cancel-in-progress: true
-
+  
 jobs:
   debug:
+    if: ${{ contains(github.event.issue.labels.*.name, 'form1') }}
     runs-on: ubuntu-slim
     name: Foo
     steps:
