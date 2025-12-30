@@ -7,14 +7,16 @@ assignees:
 body:
   - type: input
     id: contact
+    validations:
+      required: false
     attributes:
       label: Contact Details
       description: How can we get in touch with you if we need more info?
       placeholder: ex. email@example.com
-    validations:
-      required: false
   - type: dropdown
     id: agree1
+    validations:
+      required: true
     attributes:
       label: Agree with terms1
       description: Do you agree with terms 1 https://eliastor.cc/terms1 
@@ -22,8 +24,6 @@ body:
         - "Yes"
         - "No"
       default: 0
-      validations:
-        required: true
   - type: dropdown
     id: accesses
     attributes:
