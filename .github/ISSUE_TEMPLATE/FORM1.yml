@@ -15,8 +15,8 @@ body:
       placeholder: ex. email@example.com
   - type: checkboxes
     id: agree1
-    validations:
-      required: true
+    # validations:
+    #   required: true
     attributes:
       label: Agree with terms
       description: Do you agree with terms
@@ -25,7 +25,7 @@ body:
           required: true
         - label: I agree with with terms 2 https://eliastor.cc/terms2
           required: true
-        - label: I read [README.md](README.md) (README.md)[README.md]
+        - label: I read README.md [README.md](README.md) 
           required: true
   - type: dropdown
     id: accesses
