@@ -19,7 +19,7 @@ body:
       required: true
     attributes:
       label: Agree with terms
-      description: Do you agree with terms:
+      description: Do you agree with terms
       options:
         - label: I agree with with terms 1 https://eliastor.cc/terms1
           required: true
