@@ -26,6 +26,8 @@ body:
       default: 0
   - type: dropdown
     id: accesses
+    validations:
+      required: true
     attributes:
       label: Access to resources
       multiple: true
@@ -34,8 +36,6 @@ body:
         - Resource 2
         - Resource 3
         - Resource 4
-      validations:
-        required: true
   - type: checkboxes
     id: terms
     attributes:
