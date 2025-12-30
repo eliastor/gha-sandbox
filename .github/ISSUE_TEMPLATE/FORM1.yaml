@@ -1,0 +1,46 @@
+name: Form sample
+description: This form is used as an example
+title: "Form submission"
+labels: ["form"]
+assignees:
+  - eliastor
+body:
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: dropdown
+    id: agree1
+    attributes:
+      label: Agree with terms1
+      description: Do you agree with terms 1 https://eliastor.cc/terms1 
+      options:
+        - Yes
+        - No
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: accesses
+    attributes:
+      label: Access to resources:
+      multiple: true
+      options:
+        - Resource 1
+        - Resource 2
+        - Resource 3
+        - Resource 4
+      validations:
+        required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
