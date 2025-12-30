@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: community support
+    url: mailto:community@eliastor.cc
+    about: Mail your question
