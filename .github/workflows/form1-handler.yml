@@ -21,8 +21,8 @@ jobs:
       - run: echo ${{ toJSON(steps.parse.outputs.data) }}
       - name: Verification of the form
         env:
-          TERMS_CHECKED: ${{ join(',' ,steps.parse.outputs.data.agree-with-terms.list.*.checked) }}
-          DEBUG_CHECKS: ${{ toJSON(fromJSON(steps.parse.outputs.data).agree-with-terms) }}
+          TERMS_CHECKED: ${{ join(',' ,fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked) }}
+          DEBUG_CHECKS: ${{ toJSON(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked) }}
         if: ${{ env.TERMS_CHECKED !='true,true' }}
         run: |
           echo "::error ::${DEBUG_CHECKS} --- ${TERMS_CHECKED}"
