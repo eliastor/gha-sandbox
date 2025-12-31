@@ -16,7 +16,9 @@ body:
 
   - type: input
     id: invitation_id
-    description: If you have invintation, provide its ID here
+    attributes:
+      label: Invitation ID
+      description: If you have invintation, provide its ID here
     validations:
       required: false
   
