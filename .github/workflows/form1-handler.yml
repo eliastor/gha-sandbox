@@ -19,11 +19,10 @@ jobs:
         id: parse
         uses: zentered/issue-forms-body-parser@v2.0.0
       - run: echo ${{ toJSON(steps.parse.outputs.data) }}
-      - name: Verification of the form
+      - name: Fail on unchecked terms
         env:
-          TERMS_CHECKED: ${{ join(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked, ',') }}
-          DEBUG_CHECKS: ${{ toJSON(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked) }}
-        if: ${{ join(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked, ',') !='true,true' }}
+          TERMS_ACCEPTED: ${{ join(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked, ',') }}
+        if: ${{ env.TERMS_ACCEPTED !='true,true' }}
         run: |
-          echo "::error ::${DEBUG_CHECKS} --- ${TERMS_CHECKED}"
+          echo "::error ::Not all terms and conditions accepted"
           exit 1
