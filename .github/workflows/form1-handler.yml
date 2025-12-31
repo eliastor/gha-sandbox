@@ -23,7 +23,7 @@ jobs:
         env:
           TERMS_CHECKED: ${{ join(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked, ',') }}
           DEBUG_CHECKS: ${{ toJSON(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked) }}
-        if: ${{ join(',' ,fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked) !='true,true' }}
+        if: ${{ join(fromJSON(steps.parse.outputs.data).agree-with-terms.list.*.checked, ',') !='true,true' }}
         run: |
           echo "::error ::${DEBUG_CHECKS} --- ${TERMS_CHECKED}"
           exit 1
