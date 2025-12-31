@@ -10,7 +10,7 @@ jobs:
   debug:
     if: ${{ contains(github.event.issue.labels.*.name, 'form1') }}
     runs-on: ubuntu-slim
-    name: Foo ${{github.event.issue.sender.login}}
+    name: Foo ${{ github.event.issue.sender.login }}
     steps:
       - env:
           FOO: ${{ toJson(github.event) }}
