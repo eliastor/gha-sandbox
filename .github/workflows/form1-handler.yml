@@ -20,7 +20,7 @@ jobs:
         uses: zentered/issue-forms-body-parser@v2.0.0
       - run: echo ${{ toJSON(steps.parse.outputs.data) }}
       - name: Verification of the form
-        if: ${{join(",",steps.parse.outputs.data.agree-with-terms.list)!="true,true"}}
+        if: ${{ join(',' ,steps.parse.outputs.data.agree-with-terms.list)!="true,true" }}
         run: |
           echo "::error ${{join(",",steps.parse.outputs.data.agree-with-terms.list)=="true,true"}}::{message}"
           exit 1
