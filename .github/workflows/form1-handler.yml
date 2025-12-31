@@ -15,3 +15,7 @@ jobs:
       - env:
           FOO: ${{ toJson(github.event) }}
         run: echo "${FOO}"
+      - name: Parsing the issue
+        id: parse
+        uses: zentered/issue-forms-body-parser@v2.0.0
+      - run: echo ${{ toJSON(steps.parse.outputs.data) }}
