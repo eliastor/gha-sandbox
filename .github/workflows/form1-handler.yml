@@ -3,14 +3,14 @@ on:
     types: [opened, edited]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-${{github.event.id}}
+  group: ${{ github.workflow }}-${{github.event.issue.number}}
   cancel-in-progress: true
   
 jobs:
   debug:
     if: ${{ contains(github.event.issue.labels.*.name, 'form1') }}
     runs-on: ubuntu-slim
-    name: Foo
+    name: Foo ${{github.event.issue.sender.login}}
     steps:
       - env:
           FOO: ${{ toJson(github.event) }}
@@ -19,3 +19,8 @@ jobs:
         id: parse
         uses: zentered/issue-forms-body-parser@v2.0.0
       - run: echo ${{ toJSON(steps.parse.outputs.data) }}
+      - name: Verification of the form
+        if: ${{join(",",steps.parse.outputs.data.agree-with-terms.list)!="true,true"}}
+        run: |
+          echo "::error ${{join(",",steps.parse.outputs.data.agree-with-terms.list)=="true,true"}}::{message}"
+          exit 1
