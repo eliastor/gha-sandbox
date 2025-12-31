@@ -23,8 +23,8 @@ body:
       options:
         - label: "I agree with with terms 1 https://eliastor.cc/terms1"
           required: true
-        #- label: "I agree with with terms 2 https://eliastor.cc/terms2"
-        #  required: true
+        - label: "I agree with with terms 2 https://eliastor.cc/terms2"
+          required: true
         #- label: "I read README.md [README.md](README.md)" 
         #  required: true
   - type: dropdown
