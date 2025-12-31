@@ -22,5 +22,5 @@ jobs:
       - name: Verification of the form
         if: ${{ join(',' ,steps.parse.outputs.data.agree-with-terms.list.*.checked)!='true,true' }}
         run: |
-          echo "::error ::${{join(',',steps.parse.outputs.data.agree-with-terms.list.*.checked)}}"
+          echo "::error ::${{join(steps.parse.outputs.data.agree-with-terms.list.*.checked, ',')}}"
           exit 1
